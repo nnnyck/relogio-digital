@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(45deg, #49a09d, #5f2c82);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.relogio {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  max-width: 800px;
+  margin: auto;
+  background: transparent;
+  border-radius: 3px;
+  box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.5);
+}
+
+.relogio div {
+  height: 170px;
+  width: 150px;
+  display: flex;
+  margin: 10px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.781);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+  border-radius: 7px;
+  letter-spacing: 3px;
+}
+
+.relogio span {
+  font-weight: bolder;
+  font-size: 60px;
+}
+
+.relogio span.tempo {
+  font-size: 10px;
+}
+
+body.dark-mode {
+  background: linear-gradient(45deg, #272727, #313131);
+  color: #ffffff;
+}
+
+.toggle-theme {
+  position: fixed;
+  top: 5%;
+  left: 3%;
+  width: 100vw;
+}
+
+.toggle-theme button {
+  position: relative;
+  background-color: rgba(83, 94, 102, 0.705);
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 50px;
+  overflow: hidden;
+  letter-spacing: 3px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.toggle-theme .indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 50px;
+  transition: transform 0.3s ease;
+}
+
+body.dark-mode .toggle-theme .indicator {
+  transform: translateX(100%);
+}
+
+body.dark-mode .toggle-theme button {
+  background-color: rgb(106, 114, 119);
+}
+
+@media only screen and (max-width: 600px) {
+  .relogio {
+    flex-direction: column;
+    align-items: center;
+    padding: 2%;
+  }
+
+  .relogio div {
+    width: calc(100% -20px);
+  }
+
+  .toggle-theme {
+    top: 10px;
+    left: 10px;
+  }
+
+  .toggle-theme button {
+    padding: 8px 12px;
+    width: 50px;
+    height: 25px;
+  }
+
+  .toggle-theme button span.text {
+    display: none;
+  }
+}
